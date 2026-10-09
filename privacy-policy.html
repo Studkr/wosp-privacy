@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wosp Privacy Policy</title>
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --ink: #1e2124;
+    --muted: #63666b;
+    --accent: #1f6f78;
+    --accent-ink: #ffffff;
+    --border: #e2dfd6;
+    --code-bg: #eeece4;
+    --callout-bg: #eef6f5;
+    --callout-border: #bcdcd9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14181b;
+      --surface: #1b2024;
+      --ink: #e8e6e1;
+      --muted: #9aa0a6;
+      --accent: #5fc2cb;
+      --accent-ink: #0d2224;
+      --border: #2a3034;
+      --code-bg: #232a2e;
+      --callout-bg: #1a2c2c;
+      --callout-border: #2c4e4c;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14181b;
+    --surface: #1b2024;
+    --ink: #e8e6e1;
+    --muted: #9aa0a6;
+    --accent: #5fc2cb;
+    --accent-ink: #0d2224;
+    --border: #2a3034;
+    --code-bg: #232a2e;
+    --callout-bg: #1a2c2c;
+    --callout-border: #2c4e4c;
+  }
+
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding-inline: 20px;
+    padding-block: 32px;
+  }
+
+  img { max-width: 100%; }
+
+  h1, h2, h3 {
+    font-family: "Fraunces", Georgia, "Times New Roman", serif;
+    font-weight: 560;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .shell {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .masthead {
+    max-width: 720px;
+    margin: 0 auto 8px;
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .masthead h1 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin: 10px 0 6px;
+  }
+
+  .masthead .meta {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 720px);
+    gap: 48px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  nav.toc {
+    position: sticky;
+    top: calc(env(safe-area-inset-top, 0px) + 24px);
+    align-self: start;
+    font-size: 13.5px;
+  }
+  nav.toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    border-left: 2px solid var(--border);
+  }
+  nav.toc li a {
+    display: block;
+    padding: 2px 0 2px 14px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  nav.toc li a:hover { color: var(--accent); }
+  nav.toc .toc-title {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  details.toc-mobile {
+    display: none;
+  }
+
+  main { min-width: 0; }
+
+  section {
+    padding-block: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  section h2 {
+    font-size: 21px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 14px;
+    scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px);
+  }
+  section h2 .num {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 15px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  h3 {
+    font-size: 16.5px;
+    margin: 22px 0 8px;
+  }
+  h3 .num { color: var(--muted); font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 14px; }
+
+  p { margin: 0 0 12px; }
+  ul { margin: 0 0 12px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  .perm {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12.5px;
+    background: var(--code-bg);
+    padding: 1px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 4px 0 8px;
+  }
+  .summary-table th, .summary-table td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .summary-table th {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .table-wrap { overflow-x: auto; margin-bottom: 8px; }
+
+  .tag {
+    display: inline-block;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .tag.on-device { color: var(--accent); border-color: var(--callout-border); background: var(--callout-bg); }
+
+  footer {
+    max-width: 720px;
+    margin: 8px auto 0;
+    padding-top: 24px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  @media (max-width: 880px) {
+    .layout {
+      grid-template-columns: minmax(0, 720px);
+      margin-top: 24px;
+    }
+    nav.toc.desktop { display: none; }
+    details.toc-mobile {
+      display: block;
+      max-width: 720px;
+      margin: 0 auto 8px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      padding: 10px 14px;
+    }
+    details.toc-mobile summary {
+      cursor: pointer;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    details.toc-mobile ol {
+      list-style: none;
+      margin: 10px 0 2px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    details.toc-mobile a { color: var(--ink); text-decoration: none; font-size: 14px; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="shell">
+
+  <div class="masthead">
+    <div class="eyebrow">Privacy Policy</div>
+    <h1>Wosp</h1>
+    <div class="meta">Effective October 9, 2026 · Applies to Wosp for Android</div>
+  </div>
+
+  <div class="layout">
+
+    <nav class="toc desktop">
+      <div class="toc-title">On this page</div>
+      <ol>
+        <li><a href="#sec-1">1. Overview</a></li>
+        <li><a href="#sec-2">2. What we access, and why</a></li>
+        <li><a href="#sec-3">3. What Wosp does not do</a></li>
+        <li><a href="#sec-4">4. Third-party services</a></li>
+        <li><a href="#sec-5">5. Your choices &amp; data retention</a></li>
+        <li><a href="#sec-6">6. Children's privacy</a></li>
+        <li><a href="#sec-7">7. Security</a></li>
+        <li><a href="#sec-8">8. Your rights</a></li>
+        <li><a href="#sec-9">9. Changes to this policy</a></li>
+        <li><a href="#sec-10">10. Contact</a></li>
+      </ol>
+    </nav>
+
+    <details class="toc-mobile">
+      <summary>On this page</summary>
+      <ol>
+        <li><a href="#sec-1">1. Overview</a></li>
+        <li><a href="#sec-2">2. What we access, and why</a></li>
+        <li><a href="#sec-3">3. What Wosp does not do</a></li>
+        <li><a href="#sec-4">4. Third-party services</a></li>
+        <li><a href="#sec-5">5. Your choices &amp; data retention</a></li>
+        <li><a href="#sec-6">6. Children's privacy</a></li>
+        <li><a href="#sec-7">7. Security</a></li>
+        <li><a href="#sec-8">8. Your rights</a></li>
+        <li><a href="#sec-9">9. Changes to this policy</a></li>
+        <li><a href="#sec-10">10. Contact</a></li>
+      </ol>
+    </details>
+
+    <main>
+
+      <section id="sec-1">
+        <h2><span class="num">1.</span> Overview</h2>
+        <p>Wosp ("the app", "we", "us") is an audio player for Android, developed by <strong>Borisovskiy Artem</strong>. This policy explains what information Wosp accesses on your device and through the services it connects to, why it accesses it, and what happens to it.</p>
+        <p>The short version: Wosp plays audio from your device and, if you choose to connect it, from your own Google Drive. We do not operate a backend server, we do not sell data, and we do not run advertising. The only outside parties involved are Google's own services — Firebase (crash reports and usage analytics) and Google Drive (only if you link it).</p>
+      </section>
+
+      <section id="sec-2">
+        <h2><span class="num">2.</span> What we access, and why</h2>
+
+        <div class="table-wrap">
+          <table class="summary-table">
+            <thead>
+              <tr><th>Category</th><th>Why Wosp accesses it</th><th>Leaves your device?</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Audio files on your device</td><td>To scan, list, and play your local library</td><td><span class="tag on-device">Stays on device</span></td></tr>
+              <tr><td>Google Drive files you select (optional)</td><td>To display and stream only audio files you choose in Google's file picker</td><td><span class="tag">Google's servers only</span></td></tr>
+              <tr><td>Bluetooth device list</td><td>To route playback and controls to connected headphones/speakers</td><td><span class="tag on-device">Stays on device</span></td></tr>
+              <tr><td>Usage &amp; interaction events</td><td>To understand which features are used, via Firebase Analytics</td><td><span class="tag">Google/Firebase</span></td></tr>
+              <tr><td>Crash &amp; diagnostic reports</td><td>To find and fix bugs, via Firebase Crashlytics</td><td><span class="tag">Google/Firebase</span></td></tr>
+              <tr><td>Notification for playback controls</td><td>Required by Android to show the lock-screen / status-bar player</td><td><span class="tag on-device">Stays on device</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3><span class="num">2.1</span> Audio files stored on your device</h3>
+        <p>Wosp reads audio files and their tags (title, artist, album art) using the Android permissions <span class="perm">READ_MEDIA_AUDIO</span> and, on older Android versions, <span class="perm">READ_EXTERNAL_STORAGE</span> / <span class="perm">WRITE_EXTERNAL_STORAGE</span>. This is used only to build your library and play tracks on your own device. Wosp does not upload your local audio files anywhere.</p>
+
+        <h3><span class="num">2.2</span> Google Drive (optional)</h3>
+        <p>If you choose files from Google Drive, Wosp requests the <span class="perm">drive.file</span> scope. This grants access only to files you select through Google's file picker; Wosp cannot browse your whole Drive. Selected audio is streamed from Google Drive and is copied to your device only when you choose the download action in the app. Wosp does not operate a server or send these files to any server it controls. You can revoke access at any time from your Google Account's third-party access settings.</p>
+
+        <h3><span class="num">2.3</span> Bluetooth</h3>
+        <p>Wosp uses <span class="perm">BLUETOOTH</span> / <span class="perm">BLUETOOTH_CONNECT</span> only to detect connected audio devices (headphones, speakers, car units) so playback and hardware media buttons work correctly. This is not used to scan for or track nearby devices for any other purpose.</p>
+
+        <h3><span class="num">2.4</span> Usage &amp; diagnostics</h3>
+        <p>Wosp uses Firebase Analytics and Firebase Crashlytics, both operated by Google. Analytics may collect app interaction events and device/app identifiers (such as an advertising or installation identifier); Crashlytics collects crash stack traces, device model, and OS version when the app fails unexpectedly. Both are used only to understand feature usage and fix bugs — see <a href="#sec-4">Section 4</a> for how Google handles this data.</p>
+
+        <h3><span class="num">2.5</span> Notifications</h3>
+        <p><span class="perm">POST_NOTIFICATIONS</span> is used only to show the media playback notification (required by Android for background/lock-screen controls). Wosp does not send marketing or promotional push notifications.</p>
+      </section>
+
+      <section id="sec-3">
+        <h2><span class="num">3.</span> What Wosp does not do</h2>
+        <ul>
+          <li>We do not operate a backend server that stores your files, your library, or your listening history.</li>
+          <li>We do not require an account, username, or password — the only sign-in is Google's own, and only if you choose to link Drive.</li>
+          <li>We do not sell or rent personal data to anyone.</li>
+          <li>We do not run third-party advertising or ad-tracking SDKs.</li>
+        </ul>
+      </section>
+
+      <section id="sec-4">
+        <h2><span class="num">4.</span> Third-party services</h2>
+        <p>Wosp relies on the following services, each governed by its own provider's privacy policy:</p>
+        <ul>
+          <li><strong>Google Firebase</strong> (Analytics &amp; Crashlytics) — see the <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy and security policy</a>.</li>
+          <li><strong>Google Drive API</strong> — used only with your explicit sign-in and for files you select; see the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
+        </ul>
+        <p>Wosp's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+      </section>
+
+      <section id="sec-5">
+        <h2><span class="num">5.</span> Your choices &amp; data retention</h2>
+        <ul>
+          <li><strong>Disconnect Google Drive</strong> at any time from your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account's third-party access page</a>; Wosp immediately loses the ability to read your Drive files.</li>
+          <li><strong>Clear local data</strong> by uninstalling the app or clearing its storage in Android Settings — this removes your locally cached library data from your device.</li>
+          <li><strong>Limit ad personalization</strong> by resetting or opting out of your advertising identifier in your device's Google Settings; this reduces what advertising identifiers Firebase Analytics can associate with your device.</li>
+          <li>Analytics and crash data retained by Firebase follows Google's own retention controls, which we configure but do not directly store.</li>
+        </ul>
+      </section>
+
+      <section id="sec-6">
+        <h2><span class="num">6.</span> Children's privacy</h2>
+        <p>Wosp is not directed at children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child has provided us information, contact us using the details in <a href="#sec-10">Section 10</a> and we'll remove it.</p>
+      </section>
+
+      <section id="sec-7">
+        <h2><span class="num">7.</span> Security</h2>
+        <p>We rely on Android's app sandboxing, Google's OAuth infrastructure, and Firebase's platform security to protect the limited data described above. No method of transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+      </section>
+
+      <section id="sec-8">
+        <h2><span class="num">8.</span> Your rights</h2>
+        <p>Depending on where you live, you may have the right to request access to, correction of, or deletion of personal data associated with you, to object to or restrict certain processing, or to receive your data in a portable format. Since Wosp keeps your library and files on your own device and your own Drive, most of this data is already directly in your control. For anything held by Firebase on our behalf, contact us using the details below and we will forward or fulfil the request.</p>
+      </section>
+
+      <section id="sec-9">
+        <h2><span class="num">9.</span> Changes to this policy</h2>
+        <p>If we change what Wosp accesses or how it's used, we'll update this page and change the effective date above. Material changes will also be reflected in the app's release notes.</p>
+      </section>
+
+      <section id="sec-10">
+        <h2><span class="num">10.</span> Contact</h2>
+        <p>Questions about this policy or your data can be sent to <a href="mailto:borisovskiy.dev@gmail.com">borisovskiy.dev@gmail.com</a>.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    Wosp Privacy Policy — effective October 9, 2026.
+  </footer>
+
+</div>
+</body>
+</html>
